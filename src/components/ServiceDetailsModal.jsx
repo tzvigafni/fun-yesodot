@@ -105,7 +105,7 @@ export default function ServiceDetailsModal({ service, onClose }) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full mx-auto my-8 overflow-hidden max-h-full transform transition-all duration-300 scale-100 animate-in zoom-in-95 slide-in-from-bottom-2"
+        className="bg-white rounded-xl shadow-2xl max-w-4xl w-full mx-auto my-8 overflow-hidden max-h-full transform transition-all duration-300 scale-100 animate-in zoom-in-95 slide-in-from-bottom-2"
         onClick={(e) => e.stopPropagation()} // מונע סגירה בלחיצה בתוך המודאל
       >
         <div className="p-8 md:p-12 relative h-full overflow-y-auto max-h-[90vh]">
