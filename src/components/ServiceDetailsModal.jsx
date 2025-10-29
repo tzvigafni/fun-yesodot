@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 export default function ServiceDetailsModal({ service, onClose }) {
   if (!service) return null; // לא מציגים אם אין שירות נבחר
 
-  // נתונים דמיוניים להדגמת פירוט נוסף
+  // נתונים דמיוניים להדגמת פירוט נוס
   const details = {
     "אירועים פרטיים": {
       info: "החללים שלנו מתאימים לאירועים של 50 עד 200 אורחים, עם גמישות מלאה בעיצוב האולם ובבחירת התפריט. אנחנו מספקים פתרונות תאורה וסאונד מתקדמים, והכל בליווי אישי של מנהל אירוע צמוד.",
@@ -106,7 +106,7 @@ export default function ServiceDetailsModal({ service, onClose }) {
     >
       <div
         className="bg-white rounded-xl shadow-2xl max-w-4xl w-full mx-auto my-8 overflow-hidden max-h-full transform transition-all duration-300 scale-100 animate-in zoom-in-95 slide-in-from-bottom-2"
-        onClick={(e) => e.stopPropagation()} // מונע סגירה בלחיצה בתוך המודאל
+        onClick={(e) => e.stopPropagation()} // //מונע סגירה בלחיצה בתוך המודאל
       >
         <div className="p-8 md:p-12 relative h-full overflow-y-auto max-h-[90vh]">
           <Button
