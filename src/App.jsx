@@ -1,21 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, Mail, Clock, Calendar, Users, Sparkles, Heart, Music, Camera, UtensilsCrossed, PartyPopper } from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Input } from './components/ui/input';
-import { Textarea } from './components/ui/textarea';
-import { Card, CardContent } from './components/ui/card';
+import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Calendar,
+  Users,
+  Sparkles,
+  Heart,
+  Music,
+  Camera,
+  UtensilsCrossed,
+  PartyPopper,
+} from "lucide-react";
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import { Textarea } from "./components/ui/textarea";
+import { Card, CardContent } from "./components/ui/card";
+import ServiceDetailsModal from "./components/ServiceDetailsModal";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
-      const sections = ['home', 'about', 'services', 'gallery', 'contact'];
-      const current = sections.find(section => {
+
+      const sections = ["home", "about", "services", "gallery", "contact"];
+      const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -26,96 +43,140 @@ export default function Home() {
       if (current) setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsMenuOpen(false);
     }
   };
 
   const navItems = [
-    { id: 'home', label: 'בית' },
-    { id: 'about', label: 'אודות' },
-    { id: 'services', label: 'שירותים' },
-    { id: 'gallery', label: 'גלריה' },
-    { id: 'contact', label: 'צור קשר' }
+    { id: "home", label: "בית" },
+    { id: "about", label: "אודות" },
+    { id: "services", label: "שירותים" },
+    { id: "gallery", label: "גלריה" },
+    { id: "contact", label: "צור קשר" },
   ];
 
   const services = [
     {
       icon: PartyPopper,
-      title: 'אירועים פרטיים',
-      description: 'אירועי יום הולדת, בר/בת מצווה, ומסיבות משפחתיות באווירה חמה ומזמינה',
-      color: 'from-pink-400 to-rose-500'
+      title: "אירועים פרטיים",
+      description:
+        "אירועי יום הולדת, בר/בת מצווה, ומסיבות משפחתיות באווירה חמה ומזמינה",
+      color: "from-pink-400 to-rose-500",
     },
     {
       icon: Users,
-      title: 'ימי כיף קבוצתיים',
-      description: 'פעילויות גיבוש לחברות וארגונים עם חוויות בלתי נשכחות',
-      color: 'from-blue-400 to-cyan-500'
+      title: "ימי כיף קבוצתיים",
+      description: "פעילויות גיבוש לחברות וארגונים עם חוויות בלתי נשכחות",
+      color: "from-blue-400 to-cyan-500",
     },
     {
       icon: UtensilsCrossed,
-      title: 'אוכל ביתי משובח',
-      description: 'תפריטים מגוונים ומעולים המוגשים בכל האירועים שלנו',
-      color: 'from-amber-400 to-orange-500'
+      title: "אוכל ביתי משובח",
+      description: "תפריטים מגוונים ומעולים המוגשים בכל האירועים שלנו",
+      color: "from-amber-400 to-orange-500",
     },
     {
       icon: Music,
-      title: 'בידור ומוזיקה',
-      description: 'מערכות קול מתקדמות, DJ ואפשרויות בידור מגוונות',
-      color: 'from-purple-400 to-indigo-500'
+      title: "בידור ומוזיקה",
+      description: "מערכות קול מתקדמות, DJ ואפשרויות בידור מגוונות",
+      color: "from-purple-400 to-indigo-500",
     },
     {
       icon: Camera,
-      title: 'צילום ותיעוד',
-      description: 'שירותי צילום ווידאו מקצועיים לשימור הזיכרונות',
-      color: 'from-green-400 to-emerald-500'
+      title: "צילום ותיעוד",
+      description: "שירותי צילום ווידאו מקצועיים לשימור הזיכרונות",
+      color: "from-green-400 to-emerald-500",
     },
     {
       icon: Heart,
-      title: 'אווירה משפחתית',
-      description: 'יחס אישי וחם שהופך כל אירוע לחוויה בלתי נשכחת',
-      color: 'from-red-400 to-pink-500'
-    }
+      title: "אווירה משפחתית",
+      description: "יחס אישי וחם שהופך כל אירוע לחוויה בלתי נשכחת",
+      color: "from-red-400 to-pink-500",
+    },
   ];
 
   const galleryImages = [
-    { url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800', span: 'col-span-2 row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800', span: 'col-span-1 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800', span: 'col-span-1 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800', span: 'col-span-1 row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800', span: 'col-span-2 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800', span: 'col-span-1 row-span-1' }
+    {
+      url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800",
+      span: "col-span-2 row-span-2",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800",
+      span: "col-span-1 row-span-1",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800",
+      span: "col-span-1 row-span-1",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800",
+      span: "col-span-1 row-span-2",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
+      span: "col-span-2 row-span-1",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800",
+      span: "col-span-1 row-span-1",
+    },
   ];
 
+  // פונקציה לפתיחת המודאל/פירוט
+  const openServiceDetails = (service) => {
+    setSelectedService(service);
+  };
+
+  // פונקציה לסגירת המודאל/פירוט
+  const closeServiceDetails = () => {
+    setSelectedService(null);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-stone-100" dir="rtl">
+    <div
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-stone-100"
+      dir="rtl"
+    >
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/95 backdrop-blur-lg shadow-xl py-3' : 'bg-transparent py-5'
-      }`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-lg shadow-xl py-3"
+            : "bg-transparent py-5"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110`}
+              >
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className={`text-2xl font-bold transition-colors duration-300 ${
-                  scrolled ? 'bg-gradient-to-r from-orange-500 to-pink-600 bg-clip-text text-transparent' : 'text-white'
-                }`}>
+                <h1
+                  className={`text-2xl font-bold transition-colors duration-300 ${
+                    scrolled
+                      ? "bg-gradient-to-r from-orange-500 to-pink-600 bg-clip-text text-transparent"
+                      : "text-white"
+                  }`}
+                >
                   פאן כיף ואווירה
                 </h1>
-                <p className={`text-sm transition-colors duration-300 ${
-                  scrolled ? 'text-gray-600' : 'text-white/90'
-                }`}>
+                <p
+                  className={`text-sm transition-colors duration-300 ${
+                    scrolled ? "text-gray-600" : "text-white/90"
+                  }`}
+                >
                   מושב יסודות
                 </p>
               </div>
@@ -123,7 +184,7 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
-              {navItems.map(item => (
+              {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
@@ -131,11 +192,11 @@ export default function Home() {
                   className={`text-base font-medium transition-all duration-300 ${
                     activeSection === item.id
                       ? scrolled
-                        ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white hover:from-orange-600 hover:to-pink-700'
-                        : 'bg-white/20 text-white hover:bg-white/30'
+                        ? "bg-gradient-to-r from-orange-500 to-pink-600 text-white hover:from-orange-600 hover:to-pink-700"
+                        : "bg-white/20 text-white hover:bg-white/30"
                       : scrolled
-                        ? 'text-gray-700 hover:bg-gray-100'
-                        : 'text-white hover:bg-white/10'
+                      ? "text-gray-700 hover:bg-gray-100"
+                      : "text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -151,9 +212,9 @@ export default function Home() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className={scrolled ? 'text-gray-900' : 'text-white'} />
+                <X className={scrolled ? "text-gray-900" : "text-white"} />
               ) : (
-                <Menu className={scrolled ? 'text-gray-900' : 'text-white'} />
+                <Menu className={scrolled ? "text-gray-900" : "text-white"} />
               )}
             </Button>
           </div>
@@ -161,15 +222,17 @@ export default function Home() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden mt-4 pb-4 space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
-              {navItems.map(item => (
+              {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
                   className={`w-full justify-start text-base font-medium ${
                     activeSection === item.id
-                      ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white'
-                      : scrolled ? 'text-gray-700' : 'text-white'
+                      ? "bg-gradient-to-r from-orange-500 to-pink-600 text-white"
+                      : scrolled
+                      ? "text-gray-700"
+                      : "text-white"
                   }`}
                 >
                   {item.label}
@@ -181,34 +244,35 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section 
-        id="home" 
+      <section
+        id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        
+
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight">
-              פאן, כיף
-              <br />
+              פאן <br />
               <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-                ואווירה מיוחדת
+                כיף ואווירה
               </span>
             </h2>
             <p className="text-xl sm:text-2xl text-white/95 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
-              במושב יסודות מחכה לכם חוויה בלתי נשכחת של אירועים, ימי כיף ואירוח ברמה הגבוהה ביותר
+              במושב יסודות מחכה לכם חוויה בלתי נשכחת של אירועים, ימי כיף ואירוח
+              ברמה הגבוהה ביותר
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection("contact")}
                 className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
               >
                 <Calendar className="ml-2" />
@@ -217,7 +281,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection("about")}
                 className="text-lg px-8 py-6 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
               >
                 גלו עוד
@@ -262,25 +326,34 @@ export default function Home() {
             <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-700">
               <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <MapPin className="w-12 h-12 text-orange-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">המיקום המושלם</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  המיקום המושלם
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  ממוקמים בלב הטבע הירוק של מושב יסודות, אנחנו מציעים נוף עוצר נשימה ואווירה שלווה ומרגיעה המושלמת לכל אירוע.
+                  ממוקמים בלב הטבע הירוק של מושב יסודות, אנחנו מציעים נוף עוצר
+                  נשימה ואווירה שלווה ומרגיעה המושלמת לכל אירוע.
                 </p>
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <Heart className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">יחס אישי וחם</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  יחס אישי וחם
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  אנחנו מאמינים שכל אירוע הוא ייחודי. הצוות המסור שלנו דואג לכל פרט קטן כדי להפוך את האירוע שלכם למושלם ובלתי נשכח.
+                  אנחנו מאמינים שכל אירוע הוא ייחודי. הצוות המסור שלנו דואג לכל
+                  פרט קטן כדי להפוך את האירוע שלכם למושלם ובלתי נשכח.
                 </p>
               </div>
 
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <Sparkles className="w-12 h-12 text-purple-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">ניסיון ומקצועיות</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  ניסיון ומקצועיות
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  עם שנים של ניסיון באירוח אירועים, אנחנו יודעים בדיוק איך להפוך את החלום שלכם למציאות עם תשומת לב לכל הפרטים.
+                  עם שנים של ניסיון באירוח אירועים, אנחנו יודעים בדיוק איך להפוך
+                  את החלום שלכם למציאות עם תשומת לב לכל הפרטים.
                 </p>
               </div>
             </div>
@@ -289,7 +362,10 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-4 bg-gradient-to-br from-gray-50 to-stone-100">
+      <section
+        id="services"
+        className="py-24 px-4 bg-gradient-to-br from-gray-50 to-stone-100"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -305,16 +381,25 @@ export default function Home() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-4"
+                onClick={() => openServiceDetails(service)}
+                className="group relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:cursor-pointer animate-in fade-in slide-in-from-bottom-4"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                />
                 <CardContent className="p-8 relative">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -359,7 +444,10 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+      <section
+        id="contact"
+        className="py-24 px-4 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50"
+      >
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent">
@@ -381,8 +469,12 @@ export default function Home() {
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">טלפון</h3>
-                      <p className="text-gray-600 text-lg" dir="ltr">050-123-4567</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        טלפון
+                      </h3>
+                      <p className="text-gray-600 text-lg" dir="ltr">
+                        050-123-4567
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -395,8 +487,12 @@ export default function Home() {
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">אימייל</h3>
-                      <p className="text-gray-600 text-lg">info@fun-yesodot.co.il</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        אימייל
+                      </h3>
+                      <p className="text-gray-600 text-lg">
+                        info@fun-yesodot.co.il
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -409,8 +505,12 @@ export default function Home() {
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">כתובת</h3>
-                      <p className="text-gray-600 text-lg">מושב יסודות, ישראל</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        כתובת
+                      </h3>
+                      <p className="text-gray-600 text-lg">
+                        מושב יסודות, ישראל
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -423,9 +523,15 @@ export default function Home() {
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">שעות פעילות</h3>
-                      <p className="text-gray-600">ראשון - חמישי: 9:00 - 18:00</p>
-                      <p className="text-gray-600">שישי - שבת: לפי תיאום מראש</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        שעות פעילות
+                      </h3>
+                      <p className="text-gray-600">
+                        ראשון - חמישי: 9:00 - 18:00
+                      </p>
+                      <p className="text-gray-600">
+                        שישי - שבת: לפי תיאום מראש
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -437,14 +543,18 @@ export default function Home() {
               <CardContent className="p-8">
                 <form className="space-y-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">שם מלא</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      שם מלא
+                    </label>
                     <Input
                       placeholder="הכניסו את שמכם המלא"
                       className="text-lg py-6 border-2 focus:border-orange-500 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">טלפון</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      טלפון
+                    </label>
                     <Input
                       type="tel"
                       placeholder="050-123-4567"
@@ -453,7 +563,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">אימייל</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      אימייל
+                    </label>
                     <Input
                       type="email"
                       placeholder="your@email.com"
@@ -461,7 +573,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">הודעה</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      הודעה
+                    </label>
                     <Textarea
                       placeholder="ספרו לנו על האירוע שאתם מתכננים..."
                       rows={5}
@@ -505,7 +619,7 @@ export default function Home() {
             <div>
               <h4 className="text-xl font-bold mb-4">קישורים מהירים</h4>
               <div className="space-y-2">
-                {navItems.map(item => (
+                {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
@@ -541,6 +655,10 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <ServiceDetailsModal
+        service={selectedService}
+        onClose={closeServiceDetails}
+      />
     </div>
   );
 }
