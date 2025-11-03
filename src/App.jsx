@@ -333,7 +333,7 @@ export default function Home() {
             <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-700">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800"
+                  src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800"
                   alt="המושב שלנו"
                   className="rounded-3xl shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-[1.02]"
                 />
@@ -496,7 +496,7 @@ export default function Home() {
                         טלפון
                       </h3>
                       <p className="text-gray-600 text-lg" dir="ltr">
-                        050-123-4567
+                        058-323-8104
                       </p>
                     </div>
                   </div>
@@ -514,7 +514,7 @@ export default function Home() {
                         אימייל
                       </h3>
                       <p className="text-gray-600 text-lg">
-                        info@fun-yesodot.co.il
+                        fun-yesodot@gmail.com
                       </p>
                     </div>
                   </div>
