@@ -553,7 +553,7 @@ export default function Home() {
                         ראשון - חמישי: 9:00 - 18:00
                       </p>
                       <p className="text-gray-600">
-                        שישי - שבת: לפי תיאום מראש
+                        שישי, מוצ"ש: לפי תיאום מראש
                       </p>
                     </div>
                   </div>
@@ -659,11 +659,11 @@ export default function Home() {
               <div className="space-y-3 text-gray-300">
                 <p className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                  <span dir="ltr">050-123-4567</span>
+                  <span dir="ltr">058-323-8104</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-5 h-5" />
-                  info@fun-yesodot.co.il
+                  fun-yesodot@gmail.com
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-5 h-5" />
@@ -674,7 +674,9 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-            <p>© 2025 פאן כיף ואווירה - כל הזכויות שמורות</p>
+            <p>
+              © {new Date().getFullYear()} פאן כיף ואווירה - כל הזכויות שמורות
+            </p>
           </div>
         </div>
       </footer>
