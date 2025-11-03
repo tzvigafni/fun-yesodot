@@ -496,7 +496,7 @@ export default function Home() {
                         טלפון
                       </h3>
                       <p className="text-gray-600 text-lg" dir="ltr">
-                        050-123-4567
+                        058-323-8104
                       </p>
                     </div>
                   </div>
@@ -514,7 +514,7 @@ export default function Home() {
                         אימייל
                       </h3>
                       <p className="text-gray-600 text-lg">
-                        info@fun-yesodot.co.il
+                        fun-yesodot@gmail.com
                       </p>
                     </div>
                   </div>
