@@ -14,6 +14,12 @@ import {
   Camera,
   UtensilsCrossed,
   PartyPopper,
+  Tractor,
+  Car,
+  Map,
+  Headphones,
+  Baby,
+  Flashlight,
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -65,41 +71,53 @@ export default function Home() {
 
   const services = [
     {
-      icon: PartyPopper,
-      title: "אירועים פרטיים",
-      description:
-        "אירועי יום הולדת, בר/בת מצווה, ומסיבות משפחתיות באווירה חמה ומזמינה",
-      color: "from-pink-400 to-rose-500",
-    },
-    {
-      icon: Users,
-      title: "ימי כיף קבוצתיים",
-      description: "פעילויות גיבוש לחברות וארגונים עם חוויות בלתי נשכחות",
-      color: "from-blue-400 to-cyan-500",
-    },
-    {
       icon: UtensilsCrossed,
-      title: "אוכל ביתי משובח",
-      description: "תפריטים מגוונים ומעולים המוגשים בכל האירועים שלנו",
+      title: "מכונות מזון וכיבוד מהיר",
+      description:
+        "מגוון רחב של מכונות מזון - שערות סבתא, פופקורן, ברד, דוכן פלאפל, נקניקיות וארטיקים. הכל בכשרות מהדרין ובדוכנים מעוצבים",
       color: "from-amber-400 to-orange-500",
     },
     {
-      icon: Music,
-      title: "בידור ומוזיקה",
-      description: "מערכות קול מתקדמות, DJ ואפשרויות בידור מגוונות",
-      color: "from-purple-400 to-indigo-500",
-    },
-    {
-      icon: Camera,
-      title: "צילום ותיעוד",
-      description: "שירותי צילום ווידאו מקצועיים לשימור הזיכרונות",
+      icon: Tractor,
+      title: "סיור חקלאי בטרקטור ועגלה",
+      description:
+        "חוויה כפרית אותנטית! סיור מרתק ברפת, בשדות ובמושב עם הסברים מחקלאי ותיק. למידה על חקלאות ושמירת מצוות הארץ",
       color: "from-green-400 to-emerald-500",
     },
     {
-      icon: Heart,
-      title: "אווירה משפחתית",
-      description: "יחס אישי וחם שהופך כל אירוע לחוויה בלתי נשכחת",
+      icon: Car,
+      title: "מכוניות פדלים (באגי) במושב",
+      description:
+        "חוויית נהיגה מהנה לילדים! מכוניות פדלים במסלולים בטוחים ומסומנים במושב. כיף לכל המשפחה",
+      color: "from-blue-400 to-cyan-500",
+    },
+    {
+      icon: Map,
+      title: "ניווט יסודי - משחק ניווט משפחתי",
+      description:
+        "משחק אינטראקטיבי מרתק! חידות, משימות, גלגל מזל ובריכת כדורים. כולל ארטיק באמצע ופרס לכולם בסיום",
+      color: "from-purple-400 to-indigo-500",
+    },
+    {
+      icon: Headphones,
+      title: "סיור מודרך ברפת עם אוזניות מתקדמות",
+      description:
+        "גלו את הסודות מאחורי כוס החלב! 10 תחנות חינוכיות עם מערכת אוזניות מתקדמת. סיור של כחצי שעה",
+      color: "from-pink-400 to-rose-500",
+    },
+    {
+      icon: Baby,
+      title: "מתנפחים לאירועים",
+      description:
+        "טירות קפיצה ומגלשות ענק! מתנפחים איכותיים ובטוחים עם התקנה מקצועית לכל אירוע",
       color: "from-red-400 to-pink-500",
+    },
+    {
+      icon: Flashlight,
+      title: "סיורי עששיות - חוויה קסומה בלילה",
+      description:
+        "סיור לילי מיסטי בשדות המושב לאור עששיות! כולל הקרנת וידאו מיוחדת על המושב והחקלאות",
+      color: "from-indigo-400 to-purple-500",
     },
   ];
 
@@ -307,7 +325,7 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-pink-500 mx-auto rounded-full mb-8" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              ברוכים הבאים למקום הקסום שלנו במושב יסודות
+              ברוכים הבאים למושב יסודות - מקום קסום בלב השפלה
             </p>
           </div>
 
@@ -315,8 +333,8 @@ export default function Home() {
             <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-700">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800"
-                  alt="המקום שלנו"
+                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800"
+                  alt="המושב שלנו"
                   className="rounded-3xl shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl" />
@@ -327,33 +345,37 @@ export default function Home() {
               <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <MapPin className="w-12 h-12 text-orange-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  המיקום המושלם
+                  מיקום מושלם בלב השפלה
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  ממוקמים בלב הטבע הירוק של מושב יסודות, אנחנו מציעים נוף עוצר
-                  נשימה ואווירה שלווה ומרגיעה המושלמת לכל אירוע.
+                  מושב יסודות ממוקם על גבעה מוקפת עצים ושדות באזור השפלה, ליד
+                  גדרה. המיקום המצוין שלנו מספיק קרוב למרכז הארץ אך מספיק רחוק
+                  מאורבניות יתר, מה שיוצר אווירה כפרית שלווה ומרגיעה המושלמת לכל
+                  אירוע או פעילות.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <Tractor className="w-12 h-12 text-green-500 mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  מושב חקלאי פורח
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  מושב יסודות הוא מושב שיתופי חרדי ייחודי עם מסורת חקלאית עשירה.
+                  כ-5,000 דונם של שדות, פרדסים וכרמים, ורפת חלב מודרנית המייצרת
+                  מעל 3 מיליון ליטר בשנה. אנו מזמינים אתכם לחוות את הקסם החקלאי!
                 </p>
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <Heart className="w-12 h-12 text-blue-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  יחס אישי וחם
+                  מורשת ואותנטיות
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  אנחנו מאמינים שכל אירוע הוא ייחודי. הצוות המסור שלנו דואג לכל
-                  פרט קטן כדי להפוך את האירוע שלכם למושלם ובלתי נשכח.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <Sparkles className="w-12 h-12 text-purple-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  ניסיון ומקצועיות
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  עם שנים של ניסיון באירוח אירועים, אנחנו יודעים בדיוק איך להפוך
-                  את החלום שלכם למציאות עם תשומת לב לכל הפרטים.
+                  המושב נוסד בשנת 1946 על ידי ניצולי שואה חרדים חברי תנועת פועלי
+                  אגודת ישראל. עד היום שומרים אנו על האופי המיוחד והאותנטי של
+                  המושב, תוך שילוב מודרניות ומסורת.
                 </p>
               </div>
             </div>
@@ -369,11 +391,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              השירותים שלנו
+              הפעילויות שלנו
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              מגוון שירותים מקיף לכל סוגי האירועים
+              מגוון פעילויות חווייתיות לכל המשפחה - מסיורים חקלאיים ועד משחקי
+              ניווט
             </p>
           </div>
 
@@ -416,7 +439,7 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-green-500 to-teal-500 mx-auto rounded-full mb-8" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              הציצו לאירועים שלנו ותרגישו את האווירה המיוחדת
+              הציצו לפעילויות שלנו ותרגישו את האווירה המיוחדת
             </p>
           </div>
 
@@ -455,7 +478,7 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-purple-500 mx-auto rounded-full mb-8" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              נשמח לשמוע מכם ולעזור בתכנון האירוע המושלם
+              נשמח לשמוע מכם ולעזור בתכנון הפעילות המושלמת
             </p>
           </div>
 
@@ -509,7 +532,7 @@ export default function Home() {
                         כתובת
                       </h3>
                       <p className="text-gray-600 text-lg">
-                        מושב יסודות, ישראל
+                        מושב יסודות, השפלה, ישראל
                       </p>
                     </div>
                   </div>
@@ -577,7 +600,7 @@ export default function Home() {
                       הודעה
                     </label>
                     <Textarea
-                      placeholder="ספרו לנו על האירוע שאתם מתכננים..."
+                      placeholder="ספרו לנו על הפעילות שאתם מתכננים..."
                       rows={5}
                       className="text-lg border-2 focus:border-orange-500 transition-colors resize-none"
                     />
@@ -612,7 +635,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                יוצרים חוויות בלתי נשכחות עם יחס אישי, מקצועיות ואהבה
+                יוצרים חוויות בלתי נשכחות במושב החקלאי הייחודי שלנו
               </p>
             </div>
 
@@ -644,7 +667,7 @@ export default function Home() {
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-5 h-5" />
-                  מושב יסודות, ישראל
+                  מושב יסודות, השפלה, ישראל
                 </p>
               </div>
             </div>
