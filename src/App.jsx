@@ -17,7 +17,7 @@ import {
   Truck,
   Bike,
   Compass,
-  Headset,
+  Headphones,
   Smile,
   Moon,
 } from "lucide-react";
@@ -99,7 +99,7 @@ export default function Home() {
       color: "from-purple-400 to-indigo-500",
     },
     {
-      icon: Headset,
+      icon: Headphones,
       title: "סיור מודרך ברפת עם אוזניות מתקדמות",
       description:
         "גלו את הסודות מאחורי כוס החלב! 10 תחנות חינוכיות עם מערכת אוזניות מתקדמת. סיור של כחצי שעה",
