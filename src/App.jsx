@@ -14,12 +14,12 @@ import {
   Camera,
   UtensilsCrossed,
   PartyPopper,
-  Tractor,
-  Car,
-  Map,
-  Headphones,
-  Baby,
-  Flashlight,
+  Truck,
+  Bike,
+  Compass,
+  Headset,
+  Smile,
+  Moon,
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -78,42 +78,42 @@ export default function Home() {
       color: "from-amber-400 to-orange-500",
     },
     {
-      icon: Tractor,
+      icon: Truck,
       title: "סיור חקלאי בטרקטור ועגלה",
       description:
         "חוויה כפרית אותנטית! סיור מרתק ברפת, בשדות ובמושב עם הסברים מחקלאי ותיק. למידה על חקלאות ושמירת מצוות הארץ",
       color: "from-green-400 to-emerald-500",
     },
     {
-      icon: Car,
+      icon: Bike,
       title: "מכוניות פדלים (באגי) במושב",
       description:
         "חוויית נהיגה מהנה לילדים! מכוניות פדלים במסלולים בטוחים ומסומנים במושב. כיף לכל המשפחה",
       color: "from-blue-400 to-cyan-500",
     },
     {
-      icon: Map,
+      icon: Compass,
       title: "ניווט יסודי - משחק ניווט משפחתי",
       description:
         "משחק אינטראקטיבי מרתק! חידות, משימות, גלגל מזל ובריכת כדורים. כולל ארטיק באמצע ופרס לכולם בסיום",
       color: "from-purple-400 to-indigo-500",
     },
     {
-      icon: Headphones,
+      icon: Headset,
       title: "סיור מודרך ברפת עם אוזניות מתקדמות",
       description:
         "גלו את הסודות מאחורי כוס החלב! 10 תחנות חינוכיות עם מערכת אוזניות מתקדמת. סיור של כחצי שעה",
       color: "from-pink-400 to-rose-500",
     },
     {
-      icon: Baby,
+      icon: Smile,
       title: "מתנפחים לאירועים",
       description:
         "טירות קפיצה ומגלשות ענק! מתנפחים איכותיים ובטוחים עם התקנה מקצועית לכל אירוע",
       color: "from-red-400 to-pink-500",
     },
     {
-      icon: Flashlight,
+      icon: Moon,
       title: "סיורי עששיות - חוויה קסומה בלילה",
       description:
         "סיור לילי מיסטי בשדות המושב לאור עששיות! כולל הקרנת וידאו מיוחדת על המושב והחקלאות",
@@ -356,7 +356,7 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <Tractor className="w-12 h-12 text-green-500 mb-4" />
+                <Truck className="w-12 h-12 text-green-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   מושב חקלאי פורח
                 </h3>
@@ -496,7 +496,7 @@ export default function Home() {
                         טלפון
                       </h3>
                       <p className="text-gray-600 text-lg" dir="ltr">
-                        058-323-8104
+                        050-123-4567
                       </p>
                     </div>
                   </div>
@@ -514,7 +514,7 @@ export default function Home() {
                         אימייל
                       </h3>
                       <p className="text-gray-600 text-lg">
-                        fun-yesodot@gmail.com
+                        info@fun-yesodot.co.il
                       </p>
                     </div>
                   </div>
