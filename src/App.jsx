@@ -139,9 +139,9 @@ export default function Home() {
   const services = [
     {
       icon: UtensilsCrossed,
-      title: "מכונות מזון וכיבוד מהיר",
+      title: "דוכני מזון וכיבוד",
       description:
-        "מגוון רחב של מכונות מזון - שערות סבתא, פופקורן, ברד, דוכן פלאפל, נקניקיות וארטיקים. הכל בכשרות מהדרין ובדוכנים מעוצבים",
+        "מגוון רחב של דוכני מזון מהיר - שערות סבתא, פופקורן, ברד, פלאפל, נקניקיות וארטיקים. הכל בכשרות מהדרין ובדוכנים מעוצבים",
       color: "from-amber-400 to-orange-500",
     },
     {
@@ -152,20 +152,6 @@ export default function Home() {
       color: "from-green-400 to-emerald-500",
     },
     {
-      icon: Bike,
-      title: "מכוניות פדלים (באגי) במושב",
-      description:
-        "חוויית נהיגה מהנה לילדים! מכוניות פדלים במסלולים בטוחים ומסומנים במושב. כיף לכל המשפחה",
-      color: "from-blue-400 to-cyan-500",
-    },
-    {
-      icon: Compass,
-      title: "ניווט יסודי - משחק ניווט משפחתי",
-      description:
-        "משחק אינטראקטיבי מרתק! חידות, משימות, גלגל מזל ובריכת כדורים. כולל ארטיק באמצע ופרס לכולם בסיום",
-      color: "from-purple-400 to-indigo-500",
-    },
-    {
       icon: Headphones,
       title: "סיור מודרך ברפת עם אוזניות מתקדמות",
       description:
@@ -173,44 +159,58 @@ export default function Home() {
       color: "from-pink-400 to-rose-500",
     },
     {
-      icon: Smile,
-      title: "מתנפחים לאירועים",
-      description:
-        "טירות קפיצה ומגלשות ענק! מתנפחים איכותיים ובטוחים עם התקנה מקצועית לכל אירוע",
-      color: "from-red-400 to-pink-500",
-    },
-    {
       icon: Moon,
       title: "סיורי עששיות - חוויה קסומה בלילה",
       description:
-        "סיור לילי מיסטי בשדות המושב לאור עששיות! כולל הקרנת וידאו מיוחדת על המושב והחקלאות",
+        "סיור לילי מיסטי בשדות המושב לאור עששיות! כולל הקרנת וידאו מיוחדת על המושב והחקלאות. חוויה בלתי נשכחת לכל הגילאים",
       color: "from-indigo-400 to-purple-500",
+    },
+    {
+      icon: PartyPopper,
+      title: "הפקות אירועים מלאות",
+      description:
+        "הפקת אירועים ברמה הגבוהה ביותר - הפקה מקצועית, קייטרינג משובח, מנגל טרי במקום (כשרות בד״ץ), והגשה בכלי זכוכית. פתרון מקיף לכל אירוע",
+      color: "from-orange-400 to-pink-500",
+    },
+    {
+      icon: Music,
+      title: "תיפוף על דליי אור - GALAXIA",
+      description:
+        "חוויה מוזיקלית אינטראקטיבית ומרהיבה! תיפוף קבוצתי על דליי אור זוהרים בליווי מוזיקה. פעילות גיבוש מרגשת ומחזקת לכל גיל",
+      color: "from-purple-400 to-indigo-500",
+    },
+    {
+      icon: Sparkles,
+      title: "שירותים ניידים ברמה גבוהה",
+      description:
+        "שירותים ניידים איכותיים להשכרה - נקיים, מעוצבים וברמה גבוהה. כולל כיורים לנטילת ידיים. פתרון מושלם לאירועים בשטח",
+      color: "from-cyan-400 to-blue-500",
     },
   ];
 
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800",
+      url: "/images/ash2.jpg",
       span: "col-span-2 row-span-2",
     },
     {
-      url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800",
+      url: "/images/eru1.jpg",
       span: "col-span-1 row-span-1",
     },
     {
-      url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800",
+      url: "/images/tra1.jpg",
       span: "col-span-1 row-span-1",
     },
     {
-      url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800",
+      url: "/images/tif4.jpg",
       span: "col-span-1 row-span-2",
     },
     {
-      url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
+      url: "/images/eru5.jpg",
       span: "col-span-2 row-span-1",
     },
     {
-      url: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800",
+      url: "/images/ash1.jpg",
       span: "col-span-1 row-span-1",
     },
   ];
@@ -239,9 +239,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
+              {/* <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110">
                 <Sparkles className="w-6 h-6 text-white" />
-              </div>
+              </div> */}
               <div>
                 <h1
                   className={`text-2xl font-bold transition-colors duration-300 ${
@@ -343,7 +343,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl sm:text-2xl text-white/95 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
-              במושב יסודות מחכה לכם חוויה בלתי נשכחת של אירועים, ימי כיף ואירוח
+              במושב יסודות מחכה לכם חוויה בלתי נשכחת של אירועים, ימי כיף ואווירה
               ברמה הגבוהה ביותר
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -401,20 +401,19 @@ export default function Home() {
 
             <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-700">
               <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <MapPin className="w-12 h-12 text-orange-500 mb-4" />
+                <MapPin className="w-6 h-6 text-orange-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   מיקום מושלם בלב השפלה
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  מושב יסודות ממוקם על גבעה מוקפת עצים ושדות באזור השפלה, ליד
-                  גדרה. המיקום המצוין שלנו מספיק קרוב למרכז הארץ אך מספיק רחוק
-                  מאורבניות יתר, מה שיוצר אווירה כפרית שלווה ומרגיעה המושלמת לכל
-                  אירוע או פעילות.
+                  מושב יסודות ממוקם על גבעה מוקפת עצים ושדות באזור השפלה. המיקום
+                  המצוין שלנו קרוב למרכז הארץ אך רחוק מההמולה והרעש, מה שיוצר
+                  אווירה כפרית שלווה ומרגיעה המושלמת לכל אירוע או פעילות.
                 </p>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <Truck className="w-12 h-12 text-green-500 mb-4" />
+                <Truck className="w-6 h-6 text-green-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   מושב חקלאי פורח
                 </h3>
@@ -426,7 +425,7 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <Heart className="w-12 h-12 text-blue-500 mb-4" />
+                <Heart className="w-6 h-6 text-blue-500 mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   מורשת ואותנטיות
                 </h3>
@@ -471,9 +470,9 @@ export default function Home() {
                 />
                 <CardContent className="p-8 relative">
                   <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-8 h-8 rounded-md bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <service.icon className="w-8 h-8 text-white" />
+                    <service.icon className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
