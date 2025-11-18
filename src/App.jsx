@@ -468,7 +468,7 @@ export default function Home() {
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 />
-                <CardContent className="p-8 relative">
+                <CardContent className="p-8 relative  flex flex-col justify-between min-h-[320px]">
                   <div
                     className={`w-8 h-8 rounded-md bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
                   >
@@ -480,6 +480,23 @@ export default function Home() {
                   <p className="text-gray-600 leading-relaxed">
                     {service.description}
                   </p>
+
+                  <div className="mt-6 flex items-end justify-center text-stone-500 text-sm font-medium group-hover:text-stone-600 transition-all">
+                    <span className="animate-pulse">לחצו לפרטים נוספים</span>
+                    <svg
+                      className="w-4 h-4 mr-2 group-hover:translate-x-[-4px] transition-transform animate-pulse"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </div>
                 </CardContent>
               </Card>
             ))}
