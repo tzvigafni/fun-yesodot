@@ -190,7 +190,7 @@ export default function Home() {
 
   const galleryImages = [
     {
-      url: "/images/ash2.jpg",
+      url: "/images/ash1.jpg",
       span: "col-span-2 row-span-2",
     },
     {
@@ -210,7 +210,7 @@ export default function Home() {
       span: "col-span-2 row-span-1",
     },
     {
-      url: "/images/ash1.jpg",
+      url: "/images/eru9.jpg",
       span: "col-span-1 row-span-1",
     },
   ];

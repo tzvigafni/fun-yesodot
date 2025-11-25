@@ -83,20 +83,29 @@ export default function ServiceDetailsModal({ service, onClose }) {
       extraImages: ["/images/ash1.jpg?w=800", "/images/ash2.jpg?w=800"],
     },
     "תיפוף על דליי אור - GALAXIA": {
-      info: `חוויה מוזיקלית אינטראקטיבית בלתי נשכחת!
-       תיפוף קבוצתי על דליי אור זוהרים וססגוניים בליווי מוזיקה מיוחדת.
-        פעילות גיבוש ייחודית שמחברת בין משתתפים, משחררת אנרגיות ויוצרת רגעים קסומים.
-         מתאים לכל גיל - מילדים ועד מבוגרים, לאירועי חברה, ימי כיף ואירועים משפחתיים.
-          בואו לחוות את קסם התיפוף האורות!`,
+      info: `חוויה מוזיקלית אינטראקטיבית בלתי נשכחת
+
+🎵 אופציה 1 - תיפוף על דליי אור (פעילות בודדת):
+תיפוף קבוצתי על דליי אור זוהרים וססגוניים בליווי מוזיקה מרגשת.
+ פעילות גיבוש ייחודית שמחברת בין משתתפים, משחררת אנרגיות ויוצרת רגעים קסומים.
+  מתאים לכל גיל - מילדים ועד מבוגרים.
+
+🌟 אופציה 2 - חוויה גלקטית (יום פעילות מלא בטבע):
+יום שלם של פעילויות מרתקות בטבע!
+ מגוון פעילויות לבחירה - משחקי ODT אינטראקטיביים, תיפוף על דליי אור, משחקי טיי-דיי (Tie-Dye), הרקדות והפעלות משחררות, ושיתופי פעולה קבוצתיים.
+  האפשרות המיוחדת: ליווי מקצועי של צילום והפקת קליפ לאורך כל היום!
+   מושלם למוסדות וימי כיף - פעילות מרגשת פלוס קליפ מקצועי שיישאר זיכרון לנצח.`,
       features: [
-        "תיפוף קבוצתי על דליי אור זוהרים וססגוניים",
-        "ליווי מוזיקלי מקצועי ומרגש",
-        "פעילות אינטראקטיבית המחברת בין משתתפים",
+        "תיפוף על דליי אור זוהרים",
+        "חבילת 'חוויה גלקטית' - יום פעילות מלא",
+        "משחקי ODT אינטראקטיביים ומרתקים (בחוויה גלקטית)",
+        "משחקי טיי-דיי (Tie-Dye) יצירתיים (בחוויה גלקטית)",
+        "הרקדות והפעלות משחררות בשטח (בחוויה גלקטית)",
+        "ליווי מקצועי של צילום והפקת קליפ - אופציונלי",
+        "התאמה אישית מלאה לצרכי הקבוצה",
+        "הפקה מקצועית של רבקה רוזנברג",
         "מתאים לכל הגילאים - ילדים, בני נוער ומבוגרים",
-        "פעילות גיבוש מושלמת לאירועי חברה",
-        "חוויה מוזיקלית ייחודית ומרגשת",
-        "משחרר אנרגיות ויוצר אווירה מיוחדת",
-        "ללא צורך בניסיון מוזיקלי מוקדם",
+        "מושלם לאירועי חברה, מוסדות וימי כיף",
       ],
       extraImages: [
         "/images/tif1.jpg?w=800",
@@ -105,6 +114,7 @@ export default function ServiceDetailsModal({ service, onClose }) {
         "/images/tif4.jpg?w=800",
       ],
     },
+
     "שירותים ניידים ברמה גבוהה": {
       info: `פתרון מושלם לאירועים בשטח!
        שירותים ניידים איכותיים, נקיים ומעוצבים ברמה הגבוהה ביותר.
@@ -146,7 +156,7 @@ export default function ServiceDetailsModal({ service, onClose }) {
         "/images/eru2.jpg?w=800",
         "/images/eru3.jpg?w=800",
         "/images/eru4.jpg?w=800",
-        "/images/eru5.jpg?w=800",
+        "/images/eru9.jpg?w=800",
         "/images/eru6.jpg?w=800",
       ],
     },
