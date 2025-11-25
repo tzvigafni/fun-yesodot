@@ -112,7 +112,7 @@ export default function ServiceDetailsModal({ service, onClose }) {
       ],
       extraImages: ["/images/ash1.jpg?w=800", "/images/ash2.jpg?w=800"],
     },
-    "תיפוף על דליי אור - GALAXIA": {
+    "חוויה גלקטית - GALAXIA": {
       info: `חוויה מוזיקלית אינטראקטיבית בלתי נשכחת
 
 🎵 אופציה 1 - תיפוף על דליי אור (פעילות בודדת):

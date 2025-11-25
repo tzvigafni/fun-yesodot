@@ -172,11 +172,18 @@ export default function Home() {
         "הפקת אירועים ברמה הגבוהה ביותר - הפקה מקצועית, קייטרינג משובח, מנגל טרי במקום (כשרות בד״ץ), והגשה בכלי זכוכית. פתרון מקיף לכל אירוע",
       color: "from-orange-400 to-pink-500",
     },
+    // {
+    //   icon: Music,
+    //   title: "תיפוף על דליי אור - GALAXIA",
+    //   description:
+    //     "חוויה מוזיקלית אינטראקטיבית ומרהיבה! תיפוף קבוצתי על דליי אור זוהרים בליווי מוזיקה. פעילות גיבוש מרגשת ומחזקת לכל גיל",
+    //   color: "from-purple-400 to-indigo-500",
+    // },
     {
       icon: Music,
-      title: "תיפוף על דליי אור - GALAXIA",
+      title: "חוויה גלקטית - GALAXIA",
       description:
-        "חוויה מוזיקלית אינטראקטיבית ומרהיבה! תיפוף קבוצתי על דליי אור זוהרים בליווי מוזיקה. פעילות גיבוש מרגשת ומחזקת לכל גיל",
+        "2 אופציות לבחירה: תיפוף על דליי אור (פעילות בודדת) או יום פעילות מלא בטבע עם משחקי ODT, הרקדות והפעלות. כולל אופציה לצילום וקליפ מקצועי!",
       color: "from-purple-400 to-indigo-500",
     },
     {
@@ -446,6 +453,16 @@ export default function Home() {
         className="py-24 px-4 bg-gradient-to-br from-gray-50 to-stone-100"
       >
         <div className="max-w-7xl mx-auto">
+          {/* <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              הפעילויות שלנו
+            </h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              מסיורים חקלאיים קסומים ועד הפקות אירועים מלאות - חוויה בלתי נשכחת
+              לכל הגילאים
+            </p>
+          </div> */}
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               הפעילויות שלנו
@@ -455,6 +472,13 @@ export default function Home() {
               מסיורים חקלאיים קסומים ועד הפקות אירועים מלאות - חוויה בלתי נשכחת
               לכל הגילאים
             </p>
+            <div className="mt-8 max-w-2xl mx-auto bg-gradient-to-r from-orange-100 to-pink-100 p-4 rounded-2xl shadow-md">
+              <p className="text-base text-gray-800 font-medium flex items-center justify-center gap-2">
+                <span className="text-xl">📍</span>
+                רוב הפעילויות זמינות בכל רחבי הארץ - אנחנו מגיעים אליכם עם כל
+                הציוד והשירותים!
+              </p>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
