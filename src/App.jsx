@@ -452,8 +452,8 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8" />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              מגוון פעילויות חווייתיות לכל המשפחה - מסיורים חקלאיים ועד משחקי
-              ניווט
+              מסיורים חקלאיים קסומים ועד הפקות אירועים מלאות - חוויה בלתי נשכחת
+              לכל הגילאים
             </p>
           </div>
 
