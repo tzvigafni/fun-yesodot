@@ -21,6 +21,7 @@ import {
   Headphones,
   Smile,
   Moon,
+  Target,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
@@ -192,6 +193,13 @@ export default function Home() {
       description:
         "שירותים ניידים איכותיים להשכרה - נקיים, מעוצבים וברמה גבוהה. כולל כיורים לנטילת ידיים. פתרון מושלם לאירועים בשטח",
       color: "from-cyan-400 to-blue-500",
+    },
+    {
+      icon: Target,
+      title: "פיינטבול וג'לי בול - הלהיט החדש!",
+      description:
+        "הדור החדש של פיינטבול ללא כאב!     מתאים גם לילדים מגיל 6. נבנה לכם זירת קרב מלאה בכל מקום בארץ. עד 30 משתתפים. חוויה אקסטרים בטוחה ומרגשת!",
+      color: "from-red-400 to-orange-500",
     },
   ];
 
