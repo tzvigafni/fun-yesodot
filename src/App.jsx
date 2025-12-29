@@ -142,7 +142,7 @@ export default function Home() {
       icon: UtensilsCrossed,
       title: "דוכני מזון וכיבוד",
       description:
-        "מגוון רחב של דוכני מזון מהיר - שערות סבתא, פופקורן, ברד, פלאפל, נקניקיות וארטיקים. הכל בכשרות מהדרין ובדוכנים מעוצבים",
+        "מגוון רחב של דוכני מזון מהיר - שערות סבתא, פופקורן, ברד, פיצות ופיתות טריות בטאבון, פלאפל, נקניקיות וארטיקים. הכל בכשרות מהדרין ובדוכנים מעוצבים",
       color: "from-amber-400 to-orange-500",
     },
     {
@@ -619,9 +619,7 @@ export default function Home() {
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
                         אימייל
                       </h3>
-                      <p className="text-gray-600 text-lg">
-                        fun.yesodot@gmail.com
-                      </p>
+                      <p className="text-gray-600 text-lg">kefpan1@gmail.com</p>
                     </div>
                   </div>
                 </CardContent>
@@ -824,7 +822,7 @@ export default function Home() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-5 h-5" />
-                  fun.yesodot@gmail.com
+                  kefpan1@gmail.com
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-5 h-5" />
